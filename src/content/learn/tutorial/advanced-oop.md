@@ -38,13 +38,13 @@ items:
 
 Before you begin this chapter, ensure you:
 
--   Have completed Chapter 6 and have a
-    working Dart development environment with the `dartpedia` project.
--   Are familiar with basic programming concepts like
-    variables, functions, and control flow.
--   Understand the concepts of packages and libraries in Dart.
--   Have a basic understanding of
-    object-oriented programming concepts like classes and enums.
+- Have completed Chapter 6 and have a
+  working Dart development environment with the `dartpedia` project.
+- Are familiar with basic programming concepts like
+  variables, functions, and control flow.
+- Understand the concepts of packages and libraries in Dart.
+- Have a basic understanding of
+  object-oriented programming concepts like classes and enums.
 
 ## Tasks
 
@@ -121,7 +121,7 @@ methods for applying colors to text.
 
 1.  Add methods to the `ConsoleColor` enum for applying colors to text:
 
-    ```dart title="command_runner/lib/src/console.dart"
+    ````dart title="command_runner/lib/src/console.dart"
     enum ConsoleColor {
       // ... (existing enum values)
 
@@ -160,7 +160,7 @@ methods for applying colors to text.
         return '$ansiEscapeLiteral[48;2;$r;$g;${b}m$text$ansiEscapeLiteral[0m';
       }
     }
-    ```
+    ````
 
     These methods use [ANSI escape codes][] to
     apply foreground and background colors to text.
@@ -250,7 +250,7 @@ This example creates a command that makes console output colorful.
 
     import 'package:command_runner/command_runner.dart';
 
-    class PrettyEcho extends Command<String> {
+    class PrettyEcho extends Command {
       PrettyEcho() {
         addFlag(
           'blue-only',
@@ -303,7 +303,7 @@ This example creates a command that makes console output colorful.
     }
 
     void main(List<String> arguments) {
-      final runner = CommandRunner<String>()..addCommand(PrettyEcho());
+      final runner = CommandRunner()..addCommand(PrettyEcho());
 
       runner.run(arguments);
     }
